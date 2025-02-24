@@ -9,7 +9,7 @@ public class main {     // Main
         // Game stats
         int wins = 0;
         int losses = 0;
-        
+
         Scanner input = new Scanner(System.in);
         boolean playAgain = true;   // boolean for stopping/continuing
 
@@ -59,6 +59,7 @@ public class main {     // Main
             // Game
             while(!isWordGuessed(guessedWord) && lives > 0) {
                 // Start info
+                System.out.println();
                 System.out.println("Word: " + String.valueOf(guessedWord));
                 System.out.println("Attempts left: " + lives);
                 System.out.print("Enter a letter or the whole word: ");
@@ -66,10 +67,10 @@ public class main {     // Main
                 // Initial to check on empty and whole word guess
                 String initial = input.nextLine().toLowerCase();
                 
+                System.out.println("");
+                System.out.println("");
+                
                 // Empty input check
-                System.out.println("");
-                System.out.println("");
-
                 if (initial.isEmpty()) {
                     System.out.println("Input cannot be empty! ");
                     continue;
@@ -77,6 +78,12 @@ public class main {     // Main
 
                 // guessing letter
                 char x = initial.charAt(0);
+
+                // check for numbers
+                if (Character.isDigit(x)) {
+                    System.out.println("Numbers are not allowed! Try again.");
+                    continue;
+                }
     
                 // whole word guessed correctly
                 if (initial.length() == word.length() && initial.equals(word)) {
