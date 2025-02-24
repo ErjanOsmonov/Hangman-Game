@@ -21,4 +21,19 @@
 * Lives reach 0 (loss).  
 * After each game, the player can choose to play again.  
 ## Documentation  
-
+### Key Features  
+#### Word Selection:  
+* Reads words from words.txt into an ArrayList.  
+* Uses Random to select a word from the list.  
+#### Input Validation:  
+* Rejects empty input.  
+* Rejects numbers.  
+* Prevents repeated letter guesses.  
+#### Gameplay:  
+* Displays the current state of the word and remaining lives.  
+* Updates the word display based on correct guesses.  
+* Adjusts lives based on incorrect guesses.  
+#### Endgame:  
+* Congratulates the player on a win or reveals the word on a loss.  
+* Updates win/loss stats.  
+* Prompts to play again (1 = yes, anything else = no).  
