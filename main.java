@@ -6,11 +6,18 @@ import java.util.Scanner;
 
 public class main {     // Main    
     public static void main(String[] args) {
+        // Game stats
+        int wins = 0;
+        int losses = 0;
+        
         Scanner input = new Scanner(System.in);
         boolean playAgain = true;   // boolean for stopping/continuing
 
         // Play again after finishing
         while (playAgain) {
+            System.out.println("Wins: " + wins);
+            System.out.println("Losses: " + losses);
+            System.out.println("");
 
             String word = "";       
             int lives = 7;
@@ -61,6 +68,8 @@ public class main {     // Main
                 
                 // Empty input check
                 System.out.println("");
+                System.out.println("");
+
                 if (initial.isEmpty()) {
                     System.out.println("Input cannot be empty! ");
                     continue;
@@ -112,8 +121,10 @@ public class main {     // Main
             // Game end
             if (isWordGuessed(guessedWord)) {
                 System.out.println("Congratulations! You've correctly guessed the word: " + word);
+                wins++;
             } else {
                 System.out.println("You Lost! The word was: " + word);
+                losses++;
             }
 
             System.out.println("Would you like to play again? \n Write '1' if yes, write anything else if no \n");
